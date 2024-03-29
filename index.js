@@ -32,12 +32,12 @@ if (pinAnswer.Pin === myPin) {
                 type: "number",
                 message: "Enter your Amount",
             }]);
-        myBalance -= amountAns.Amount;
         if (amountAns.Amount > myBalance) {
             console.log("Insufficient Balance");
         }
         else {
-            console.log(`your remaining balance is ${myBalance}`);
+            myBalance -= amountAns.Amount;
+            console.log(`Transaction Successful! Your remaining balance is ${myBalance}.`);
         }
     }
     else if (OperationAns.Operation === "CheckBalance") {
@@ -50,12 +50,12 @@ if (pinAnswer.Pin === myPin) {
                 message: "Please select your amount",
                 choices: [5000, 10000, 15000, 20000],
             }]);
-        myBalance -= fastCashAns.Fastcash;
         if (fastCashAns.Fastcash > myBalance) {
             console.log("Insufficient Balance");
         }
         else {
-            console.log(`your remaining balance is ${myBalance}`);
+            myBalance -= fastCashAns.Fastcash;
+            console.log(`Transaction Successful! Your remaining balance is ${myBalance}.`);
         }
     }
 }
